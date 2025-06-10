@@ -111,6 +111,7 @@ public static String personType(String type) {
         int personalityIndex = 0;
 
         for (int i = 0; i < questions.length; i++) {
+            System.out.println("choose A/B for question " + (i +1 ));
             System.out.println(questions[i][0]);
             System.out.println(questions[i][1]);
             String answer = input.nextLine().trim().toUpperCase();
