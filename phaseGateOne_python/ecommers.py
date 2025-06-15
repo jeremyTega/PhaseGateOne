@@ -23,7 +23,7 @@ while True:
     items.append({"item": item_name, "quantity": quantity, "price": price, "total": total})
     sub_total += total
 
-    add_more = input("Do you want to add more items? (yes/no) ").lower()
+    add_more = input("Do you want to add more items?  ").lower()
     if add_more != "yes":
         break
 
