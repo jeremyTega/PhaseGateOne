@@ -54,48 +54,62 @@ public class schoolGrade {
             for (int j = 0; j < numberOfSubjects; j++) {
                 System.out.print(studentGradeSystem[i][j] + " ");
             }
-            System.out.printf("| Total: %d | Average: %.2f\n", totals[i], averages[i]); //ranks[i]);
+            System.out.printf("| Total: %d | Average: %.2f\n", totals[i], averages[i]);
         }
 
+        int hardestSubjectIndex = -1;
+    int easiestSubjectIndex = -1;
+        int Fails = -1;
+        int Passes = -1;
 
-        for (int i = 0; i < numberOfSubjects; i ++ ){
-            int highestScore = 0;
-            int totalScore = 0;
-            int numberOfPasses = 0;
-            int numberOfFails = 0;
-            int lowestScore = 101;
-            String highStudent = "";
-            String lowStudent = "";
+for (int i = 0; i < numberOfSubjects; i++) {
+    int highestScore = 0;
+    int totalScore = 0;
+    int numberOfPasses = 0;
+    int numberOfFails = 0;
+    int lowestScore = 101;
+    String highStudent = "";
+    String lowStudent = "";
 
-            for(int j = 0; j < numberOfStudents; j++){
-              int score = studentGradeSystem[j][i];
-              totalScore+=score;
-              if(score > highestScore ){
-                highestScore = score;
-                highStudent = "Student" + (j +1);
-              }
-              if(score < lowestScore){
-                lowestScore = score;
-                lowStudent = "Student" + (j +1);
-              }
-              if (score >= 50){
-                numberOfPasses++;
-              }else{
-                numberOfFails++;
-              }
-
-
-
-            }
-            System.out.println("subject " + (i +1));
-            System.out.println("Highest scoring studdent is  " + highStudent + " scoring " + highestScore);
-            System.out.println("Lowest scoring studdent is  " + lowStudent + " scoring " + lowestScore);
-            System.out.println("total score is " +  totalScore);
-            System.out.println("number of pass is "+ numberOfPasses);
-            System.out.println("number of fail is "+ numberOfFails);
-
-
+    for (int j = 0; j < numberOfStudents; j++) {
+        int score = studentGradeSystem[j][i];
+        totalScore += score;
+        if (score > highestScore) {
+            highestScore = score;
+            highStudent = "Student" + (j + 1);
         }
+        if (score < lowestScore) {
+            lowestScore = score;
+            lowStudent = "Student" + (j + 1);
+        }
+        if (score >= 50) {
+            numberOfPasses++;
+        } else {
+            numberOfFails++;
+        }
+    }
+
+
+    if (numberOfFails > Fails) {
+        Fails = numberOfFails;
+        hardestSubjectIndex = i;
+    }
+    if (numberOfPasses > Passes) {
+        Passes = numberOfPasses;
+        easiestSubjectIndex = i;
+    }
+
+    System.out.println("Subject " + (i + 1));
+    System.out.println("Highest scoring student is " + highStudent + " scoring " + highestScore);
+    System.out.println("Lowest scoring student is " + lowStudent + " scoring " + lowestScore);
+    System.out.println("Total score is " + totalScore);
+    System.out.println("Number of passes: " + numberOfPasses);
+    System.out.println("Number of fails: " + numberOfFails);
+}
+
+
+
+
 
         int generalTotalScore = 0;
         double generalAverageScore = 0.0;
@@ -113,6 +127,8 @@ public class schoolGrade {
         generalAverageScore = (double) generalTotalScore / (numberOfStudents * numberOfSubjects);
 
         System.out.println("\n--- General Summary ---");
+        System.out.println("Hardest Subject: Subject " + (hardestSubjectIndex + 1) + " with " + Fails + " fails.");
+        System.out.println("Easiest Subject: Subject " + (easiestSubjectIndex + 1) + " with " + Passes + " passes.");
         System.out.println("General Total Score of all students: " + generalTotalScore);
         System.out.printf("General Average Score: %.2f\n", generalAverageScore);
         System.out.println("Best Graduating Student: " + bestStudent + " with total score of " + bestScore);

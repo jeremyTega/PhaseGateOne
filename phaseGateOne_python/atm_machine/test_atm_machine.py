@@ -7,7 +7,7 @@ class TestATMFunctions(unittest.TestCase):
 
 
      def test_create_account(self):
-        """Test creating an account."""
+
         firstName = "Alice"
         lastName = "Smith"
         phone = "1234567890"
