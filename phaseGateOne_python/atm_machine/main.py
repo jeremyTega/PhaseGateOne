@@ -1,11 +1,5 @@
-import random
-random_Acc_number = random.randint(100000000, 999999999)
-
-Accounts = []
-
-
-def createAccount(firstName, lastName, pin):
 import methodsAtmMachine
+
 while True:
     print("\n====== WELCOME ======")
     print("1. Create Account")
@@ -29,11 +23,11 @@ while True:
             else:
                  print("Invalid PIN. Please enter exactly 4 digits (numbers only).")
 
-        print(createAccount(first, last, pin))
+        print(methodsAtmMachine.createAccount(first, last, pin))
 
     elif choice == "2":
         acc = int(input("Enter your account number: "))
-        print(closeAccount(acc))
+        print(methodsAtmMachine.closeAccount(acc))
 
     elif choice == "3":
         acc = int(input("Enter your account number: "))
@@ -45,7 +39,7 @@ while True:
         #          print("Invalid amount. Please enter a correct amount.")
 
 
-        print(depositMoney(acc, amt))
+        print(methodsAtmMachine.depositMoney(acc, amt))
 
     elif choice == "4":
         acc = int(input("Enter your account number: "))
@@ -61,13 +55,13 @@ while True:
         #          break
         #     else:
         #          print("Invalid PIN. Please enter exactly 4 digits (numbers only).")
-        print(changePin(acc, new_pin))
+        print(methodsAtmMachine.changePin(acc, new_pin))
 
     elif choice == "6":
         sender = int(input("Enter your account number: "))
         receiver = int(input("Enter recipient's account number: "))
         amt = float(input("Enter amount to transfer: "))
-        print(transferMoney(sender, receiver, amt))
+        print(methodsAtmMachine.transferMoney(sender, receiver, amt))
 
     elif choice == "7":
            break
@@ -77,6 +71,6 @@ while True:
 
 
 
-        import unittest
+
 
 

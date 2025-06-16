@@ -23,7 +23,7 @@ let oddSum = 0
 let temp = 0
 
 for (let i = cardLength - 1; i >= 0; i--) {
-    let digit = parseInt(creditCard[i], 10)
+    let digit = Number(creditCard[i], 10)
     temp++;
 
     if (temp % 2 === 0) {
@@ -48,6 +48,4 @@ if(totalSum % 10 == 0){
 console.log("Credit Card Number:", creditCard)
 console.log("Card Type:", cardType)
 console.log("Card Length:", cardLength)
-console.log("Even Sum:", evenSum)
-console.log("Odd Sum:", oddSum)
 console.log("Card Validity:", cardValid)
