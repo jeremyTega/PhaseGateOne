@@ -17,4 +17,4 @@ def personType(type):
         "ESTP": "ESTP (The Entrepreneur): Energetic, pragmatic, risk-taking.",
         "ESFP": "ESFP (The Entertainer): Outgoing, friendly, and accepting."
     }
-    return descriptions.get(type, "Unknown personality type.")
+    return descriptions.get(type)
