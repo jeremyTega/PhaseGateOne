@@ -240,24 +240,6 @@ public static String changePin(ArrayList<ArrayList<String>> accounts, String pho
 
 
 
-//  public static void deposit(List<String> account, float amount) {
-//         float currentBalance = Float.parseFloat(account.get(3));
-//         currentBalance += amount;
-//         account.set(3, String.format("%.2f", currentBalance));
-//         System.out.println("Deposited successfully. New balance: " + account.get(3));
-//     }
-
-
-//     public static void withdraw(List<String> account, float amount) {
-//         float currentBalance = Float.parseFloat(account.get(3));
-//         if (amount <= currentBalance) {
-//             currentBalance -= amount;
-//             account.set(3, String.format("%.2f", currentBalance));
-//             System.out.println("Withdrawn successfully. New balance: " + account.get(3));
-//         } else {
-//             System.out.println("Insufficient balance.");
-//         }
-//     }
 
 
 

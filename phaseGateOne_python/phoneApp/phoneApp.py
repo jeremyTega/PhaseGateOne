@@ -68,7 +68,7 @@ def editContact(phone):
     print("Contact with that phone number not found.")
 
 
-# User menu
+
 while True:
     print("\n--- Welcome to Your Phone Book ---")
     print("1. Add Contact")
